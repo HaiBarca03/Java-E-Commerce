@@ -134,7 +134,5 @@ Make sure to ignore sensitive files:
 ## 📬 Contact
 
 **Doan Duc Hai**  
-📧 haidoan08022003@gmail.com  
 📍 Hải Dương  
-📱 0394558656  
 🌐 [Facebook](https://facebook.com) | [Instagram](https://instagram.com) | [Zalo](#)

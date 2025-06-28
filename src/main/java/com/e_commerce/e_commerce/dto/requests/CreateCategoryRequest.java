@@ -1,14 +1,13 @@
 package com.e_commerce.e_commerce.dto.requests;
 
-import lombok.AccessLevel;
-import lombok.Data;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-
-public class RegisterRequest {
-    String username;
-    String email;
-    String password;
+public class CreateCategoryRequest {
+    String name;
+    String description;
 }

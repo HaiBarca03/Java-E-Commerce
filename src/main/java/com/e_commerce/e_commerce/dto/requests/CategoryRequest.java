@@ -1,16 +1,16 @@
 package com.e_commerce.e_commerce.dto.requests;
 
-import lombok.AccessLevel;
-import lombok.Data;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-import java.util.Set;
-
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-
-public class RoleRequest {
+public class CategoryRequest {
     String name;
     String description;
-    Set<String> permissionIds; // list of permission IDs
+    String slug;
 }

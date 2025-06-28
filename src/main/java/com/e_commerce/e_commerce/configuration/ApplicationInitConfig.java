@@ -56,9 +56,9 @@ public class ApplicationInitConfig {
                         .username(ADMIN_USER_NAME)
                         .password(passwordEncoder.encode(ADMIN_PASSWORD))
                         .roles(roles)
+                        .enabled(true)
                         .email("admin@ecommerce.com")
                         .build();
-                log.info("Generated User ID: {}", user.getId());
                 userRepository.save(user);
                 log.warn("admin user has been created with default password: admin, please change it");
 

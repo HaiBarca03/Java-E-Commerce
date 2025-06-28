@@ -8,7 +8,9 @@ import com.e_commerce.e_commerce.exception.AppException;
 import com.e_commerce.e_commerce.exception.ErrorCode;
 import com.e_commerce.e_commerce.mapper.CategoryMapper;
 import com.e_commerce.e_commerce.repository.CategoryRepository;
+import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,10 +20,11 @@ import static com.e_commerce.e_commerce.utils.SlugUtil.toSlug;
 
 @Service
 @RequiredArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class CategoryService {
 
-    private final CategoryRepository categoryRepository;
-    private final CategoryMapper categoryMapper;
+    CategoryRepository categoryRepository;
+    CategoryMapper categoryMapper;
 
     public CategoryResponse createCategory(CreateCategoryRequest request) {
         categoryRepository.findByName(request.getName()).ifPresent(c -> {

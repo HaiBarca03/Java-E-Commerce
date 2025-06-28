@@ -25,6 +25,7 @@ public class Category  extends BaseEntity {
 
     String description;
 
+    @Column(nullable = false, unique = true)
     String slug;
 
     @ManyToMany(mappedBy = "categories")

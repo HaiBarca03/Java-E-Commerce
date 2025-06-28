@@ -1,10 +1,14 @@
 package com.e_commerce.e_commerce.dto.requests;
 
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.experimental.FieldDefaults;
 
 @Data
+@FieldDefaults(level = AccessLevel.PRIVATE)
+
 public class RegisterRequest {
-    private String username;
-    private String email;
-    private String password;
+    String username;
+    String email;
+    String password;
 }

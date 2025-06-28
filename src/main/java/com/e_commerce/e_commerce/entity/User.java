@@ -44,8 +44,8 @@ public class User extends BaseEntity {
     @Column(columnDefinition = "TEXT")
     String bio;
 
-    Boolean enabled = true;
-
+    @Column(nullable = false, columnDefinition = "TINYINT(1) DEFAULT 1")
+    boolean enabled = true;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(

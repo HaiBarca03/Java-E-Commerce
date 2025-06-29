@@ -8,18 +8,23 @@ import com.e_commerce.e_commerce.service.CategoryService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static lombok.AccessLevel.PRIVATE;
+
 @RestController
 @RequestMapping("/api/categories")
 @RequiredArgsConstructor
 @Tag(name = "Category", description = "Category CRUD operations")
+@FieldDefaults(level = PRIVATE, makeFinal = true)
+
 public class CategoryController {
 
-    private final CategoryService categoryService;
+    CategoryService categoryService;
 
     @PostMapping
     @PreAuthorize("hasRole('ADMIN')")

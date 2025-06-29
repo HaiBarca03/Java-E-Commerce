@@ -40,13 +40,13 @@ public class ProductVariantService {
 
     public ProductVariantResponse getDetail(String id) {
         ProductVariant variant = variantRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("ProductVariant not found with id: " + id));
+                .orElseThrow(() -> new AppException(ErrorCode.PRODUCT_VARIANTS_NOT_FOUND));
         return variantMapper.toResponse(variant);
     }
 
     public ProductVariantResponse getBySku(String sku) {
         ProductVariant variant = variantRepository.findBySku(sku)
-                .orElseThrow(() -> new IllegalArgumentException("ProductVariant not found with SKU: " + sku));
+                .orElseThrow(() -> new AppException(ErrorCode.PRODUCT_VARIANTS_NOT_FOUND));
         return variantMapper.toResponse(variant);
     }
 
@@ -59,16 +59,16 @@ public class ProductVariantService {
 
     public void delete(String id) {
         ProductVariant variant = variantRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("ProductVariant not found"));
+                .orElseThrow(() -> new AppException(ErrorCode.PRODUCT_VARIANTS_NOT_FOUND));
         variantRepository.delete(variant);
     }
 
     public ProductVariantResponse update(String id, ProductVariantRequest request) {
         ProductVariant variant = variantRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("ProductVariant not found"));
+                .orElseThrow(() -> new AppException(ErrorCode.PRODUCT_VARIANTS_NOT_FOUND));
 
         Product product = productRepository.findById(request.getProductId())
-                .orElseThrow(() -> new RuntimeException("Product not found"));
+                .orElseThrow(() -> new AppException(ErrorCode.PRODUCT_NOT_FOUND));
 
         variant.setProduct(product);
         variant.setColor(request.getColor());

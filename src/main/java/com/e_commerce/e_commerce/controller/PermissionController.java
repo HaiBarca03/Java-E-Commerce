@@ -6,19 +6,24 @@ import com.e_commerce.e_commerce.service.PermissionService;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static lombok.AccessLevel.PRIVATE;
+
 @RestController
 @RequestMapping("/api/permissions")
 @RequiredArgsConstructor
 @Tag(name = "Permission Management", description = "APIs for managing permissions")
+@FieldDefaults(level = PRIVATE, makeFinal = true)
+
 public class PermissionController {
 
-    private final PermissionService permissionService;
+    PermissionService permissionService;
 
     @PostMapping
     @PreAuthorize("hasRole('ADMIN')")

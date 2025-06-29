@@ -1,6 +1,5 @@
 package com.e_commerce.e_commerce.controller;
 import com.e_commerce.e_commerce.dto.response.LoginResponse;
-import com.e_commerce.e_commerce.dto.response.RegisterResponse;
 import io.swagger.v3.oas.annotations.Operation;
 
 import com.e_commerce.e_commerce.configuration.ApiResponse;

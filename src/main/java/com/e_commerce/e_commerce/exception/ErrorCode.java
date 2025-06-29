@@ -24,7 +24,9 @@ public enum ErrorCode {
     PRODUCT_VARIANTS_NOT_FOUND(1013, "Product variants not found", HttpStatus.BAD_REQUEST),
     WISHLIST_EXISTED(1014, "Already in wishlist", HttpStatus.BAD_REQUEST),
     ADDRESS_NOT_FOUND(1015, "Address not found", HttpStatus.BAD_REQUEST),
-    CODE_NOT_FOUND(1016, "Code not found", HttpStatus.BAD_REQUEST)
+    CODE_NOT_FOUND(1016, "Code not found", HttpStatus.BAD_REQUEST),
+    CART_NOT_FOUND(1017, "Cart not found", HttpStatus.BAD_REQUEST ),
+    CART_ALREADY_EXISTS(1018,"Cart by user existed", HttpStatus.BAD_REQUEST )
     ;
 
     ErrorCode(int code, String message, HttpStatusCode statusCode) {

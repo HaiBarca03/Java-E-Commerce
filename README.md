@@ -66,6 +66,8 @@ JWT_SIGNER_KEY=your-256bit-secret
 
 The app runs at:  
 📍 `http://localhost:8080/e-commerce`
+The app swagger runs at:  
+📍 `http://localhost:8080/e-commerce](http://localhost:8080/e-commerce/swagger-ui/index.html#/`
 
 ---
 

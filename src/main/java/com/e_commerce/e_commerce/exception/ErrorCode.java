@@ -20,7 +20,11 @@ public enum ErrorCode {
     CATEGORY_NOT_FOUND(1009, "Category not found", HttpStatus.BAD_REQUEST),
     CATEGORY_EXISTED(1010, "Category existed", HttpStatus.BAD_REQUEST),
     SKU_EXISTED(1011, "Sku existed", HttpStatus.BAD_REQUEST),
-    PRODUCT_NOT_FOUND(1012, "Product not found", HttpStatus.BAD_REQUEST)
+    PRODUCT_NOT_FOUND(1012, "Product not found", HttpStatus.BAD_REQUEST),
+    PRODUCT_VARIANTS_NOT_FOUND(1013, "Product variants not found", HttpStatus.BAD_REQUEST),
+    WISHLIST_EXISTED(1014, "Already in wishlist", HttpStatus.BAD_REQUEST),
+    ADDRESS_NOT_FOUND(1015, "Address not found", HttpStatus.BAD_REQUEST),
+    CODE_NOT_FOUND(1016, "Code not found", HttpStatus.BAD_REQUEST)
     ;
 
     ErrorCode(int code, String message, HttpStatusCode statusCode) {

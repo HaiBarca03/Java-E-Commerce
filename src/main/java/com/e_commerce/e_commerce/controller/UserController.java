@@ -7,20 +7,25 @@ import com.e_commerce.e_commerce.service.UserService;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
 import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static lombok.AccessLevel.PRIVATE;
+
 @RestController
 @SecurityRequirement(name = "bearerAuth")
 @RequestMapping("/api/users")
 @RequiredArgsConstructor
 @Tag(name = "User Management", description = "APIs for managing user")
+@FieldDefaults(level = PRIVATE, makeFinal = true)
+
 public class UserController {
 
-    private final UserService userService;
+    UserService userService;
 
     @GetMapping
     @PreAuthorize("hasRole('ADMIN')")

@@ -1,6 +1,7 @@
 package com.e_commerce.e_commerce.dto.response;
 
 import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -9,10 +10,12 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@FieldDefaults(level = AccessLevel.PRIVATE)
+
 public class CartResponse {
-    private String id;
-    private String userId;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
-    private List<CartItemResponse> items;
+    String id;
+    String userId;
+    LocalDateTime createdAt;
+    LocalDateTime updatedAt;
+    List<CartItemResponse> items;
 }

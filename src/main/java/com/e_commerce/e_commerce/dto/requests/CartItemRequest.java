@@ -1,6 +1,7 @@
 package com.e_commerce.e_commerce.dto.requests;
 
 import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 import java.math.BigDecimal;
 
@@ -8,8 +9,10 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@FieldDefaults(level = AccessLevel.PRIVATE)
+
 public class CartItemRequest {
-    private String productId;
-    private Integer quantity;
-    private BigDecimal price;
+    String productId;
+    Integer quantity;
+    BigDecimal price;
 }

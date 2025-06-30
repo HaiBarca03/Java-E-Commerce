@@ -9,6 +9,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import static lombok.AccessLevel.PRIVATE;
@@ -33,17 +34,20 @@ public class CouponsController {
     }
 
     @PostMapping
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<ApiResponse<CouponsResponse>> createCoupon(@RequestBody CouponRequest request) {
         ApiResponse<CouponsResponse> response = couponsService.createCoupon(request);
         return ResponseEntity.ok(response);
     }
 
     @PutMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<ApiResponse<?>> update(@PathVariable String id, @RequestBody CouponRequest request) {
         return couponsService.update(id, request);
     }
 
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<ApiResponse<?>> delete(@PathVariable String id) {
         return couponsService.delete(id);
     }
@@ -54,6 +58,7 @@ public class CouponsController {
     }
 
     @PatchMapping("/{id}/toggle")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<ApiResponse<?>> toggle(@PathVariable String id) {
         return couponsService.toggle(id);
     }

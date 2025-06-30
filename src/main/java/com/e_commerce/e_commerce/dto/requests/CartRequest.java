@@ -1,6 +1,7 @@
 package com.e_commerce.e_commerce.dto.requests;
 
 import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 import java.util.List;
 
@@ -8,6 +9,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@FieldDefaults(level = AccessLevel.PRIVATE)
+
 public class CartRequest {
-    private List<CartItemRequest> items;
+    List<CartItemRequest> items;
 }

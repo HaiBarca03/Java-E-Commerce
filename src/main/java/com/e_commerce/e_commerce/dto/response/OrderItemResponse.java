@@ -6,12 +6,9 @@ import lombok.experimental.FieldDefaults;
 import java.math.BigDecimal;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
 
-public class CartItemResponse {
+public class OrderItemResponse {
     String productId;
     Integer quantity;
     BigDecimal price;

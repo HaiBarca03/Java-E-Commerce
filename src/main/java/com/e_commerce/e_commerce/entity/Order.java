@@ -44,4 +44,7 @@ public class Order extends BaseEntity {
 
     @Column
     String note;
+
+    @OneToOne(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    Payment payment;
 }

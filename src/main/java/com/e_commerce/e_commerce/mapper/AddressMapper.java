@@ -4,9 +4,9 @@ import com.e_commerce.e_commerce.dto.requests.AddressRequest;
 import com.e_commerce.e_commerce.dto.response.AddressResponse;
 import com.e_commerce.e_commerce.entity.Address;
 import com.e_commerce.e_commerce.entity.User;
-import org.springframework.stereotype.Component;
+import org.mapstruct.Mapper;
 
-@Component
+@Mapper(componentModel = "spring")
 public class AddressMapper {
 
     public Address toEntity(AddressRequest request, User user) {

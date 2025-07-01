@@ -4,19 +4,55 @@ A full-featured e-commerce backend application built with **Spring Boot 3**, **S
 
 ---
 
-## 📦 Features
+📦 Features
+✅ User Authentication with JWT
+Đăng ký, đăng nhập, xác thực người dùng bằng JSON Web Token (JWT).
 
-- ✅ User Authentication with JWT
-- ✅ Role-based Authorization
-- ✅ Product & Category Management
-- ✅ RESTful API Design
-- ✅ Swagger API Documentation
-- ✅ MySQL Integration using Spring Data JPA
-- ✅ Auto-reload with Spring DevTools
-- ✅ Secure Configuration with Profiles or Environment Variables  
-  -- Pendinggggggggggggggggg
+✅ Role-Based Authorization
+Quản lý phân quyền bằng roles, permissions, role_permissions, user_roles.
 
----
+✅ Product & Category Management
+CRUD sản phẩm, phân loại theo nhiều danh mục với bảng product_categories.
+
+✅ Product Variants & Inventory
+Quản lý biến thể sản phẩm: size, màu sắc, giá, số lượng với bảng product_variants.
+
+✅ Shopping Cart System
+Thêm, cập nhật, xóa sản phẩm trong giỏ hàng (carts, cart_items).
+
+✅ Order Management
+Đặt hàng, lưu thông tin đơn hàng (orders, order_items).
+
+✅ Review & Rating System
+Người dùng đánh giá và bình luận sản phẩm (reviews), liên kết với đơn hàng.
+
+✅ Wishlist Functionality
+Lưu sản phẩm yêu thích bằng bảng wishlists.
+
+✅ Coupon & Discount System
+Mã giảm giá có giới hạn sử dụng, điều kiện áp dụng (coupons, discount_code_user_usage).
+
+✅ Payments & Transactions
+Quản lý thanh toán qua bảng payments liên kết với đơn hàng.
+
+✅ Address Management
+Người dùng có thể thêm nhiều địa chỉ giao hàng (addresses).
+
+✅ RESTful API Design
+Thiết kế chuẩn REST với các route rõ ràng, dễ mở rộng.
+
+✅ Swagger API Documentation
+Tự động tạo tài liệu API với Swagger UI.
+
+✅ MySQL Integration with Spring Data JPA
+Sử dụng Spring Data JPA kết nối và thao tác với cơ sở dữ liệu MySQL.
+
+✅ Auto-reload with Spring DevTools
+Tự động reload khi thay đổi code trong môi trường phát triển.
+
+✅ Secure Configuration with Profiles/Environment Variables
+Cấu hình bảo mật thông qua file application-{profile}.yml hoặc biến môi trường.
+
 
 ## 🔧 Tech Stack
 

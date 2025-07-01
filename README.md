@@ -53,6 +53,10 @@ Tự động reload khi thay đổi code trong môi trường phát triển.
 ✅ Secure Configuration with Profiles/Environment Variables
 Cấu hình bảo mật thông qua file application-{profile}.yml hoặc biến môi trường.
 
+## Database
+
+![image](https://github.com/user-attachments/assets/a9388bea-7d67-4a83-b5fa-758a100b5c0b)
+
 
 ## 🔧 Tech Stack
 

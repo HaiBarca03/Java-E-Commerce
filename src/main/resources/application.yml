@@ -18,6 +18,14 @@ spring:
       hibernate.format_sql: true
       hibernate.type: uuid-char
 
+  momo:
+    endpoint: https://test-payment.momo.vn/v2/gateway/api/create
+    partner-code: MOMO
+    access-key: F8BBA842ECF85
+    secret-key: K951B6PE1waDMi640xX08PD3vg6EkVlz
+    redirect-url: http://localhost:3000/payment-success
+    ipn-url: http://localhost:8080/e-commerce/api/payments/ipn
+
 jwt:
   signerKey: "1TjXchw5FloESb63Kc+DFhTARvpWL4jUGCwfGWxuG5SIf/1y/LgJxHnMqaF6A/ij"
   valid-duration: 3600            # in seconds (e.g., 1 hour)

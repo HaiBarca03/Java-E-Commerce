@@ -29,7 +29,10 @@ public enum ErrorCode {
     CART_ALREADY_EXISTS(1018,"Cart by user existed", HttpStatus.BAD_REQUEST ),
     ORDER_NOT_FOUND(1019,"Order not found", HttpStatus.BAD_REQUEST  ),
     ORDER_CANNOT_BE_UPDATED(1020, "Order can not update", HttpStatus.BAD_REQUEST ),
-    ORDER_CANNOT_BE_CANCELLED(1021, "Order can not delete", HttpStatus.BAD_REQUEST)
+    ORDER_CANNOT_BE_CANCELLED(1021, "Order can not delete", HttpStatus.BAD_REQUEST),
+    REVIEW_ALREADY(1022, "You have already reviewed this item", HttpStatus.BAD_REQUEST),
+    REVIEW_CAN_NOT_CREATE(1023, "You can only review items after the order has been shipped", HttpStatus.BAD_REQUEST),
+    REVIEW_NOT_FOUND(1024, "Review not found", HttpStatus.BAD_REQUEST)
     ;
 
     ErrorCode(int code, String message, HttpStatusCode statusCode) {

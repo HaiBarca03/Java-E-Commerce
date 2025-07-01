@@ -12,7 +12,9 @@ import com.e_commerce.e_commerce.mapper.PaymentMapper;
 import com.e_commerce.e_commerce.repository.OrderRepository;
 import com.e_commerce.e_commerce.repository.PaymentRepository;
 import jakarta.xml.bind.DatatypeConverter;
+import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -28,11 +30,13 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
+
 public class PaymentService {
 
-    private final PaymentRepository paymentRepository;
-    private final PaymentMapper paymentMapper;
-    private final OrderRepository orderRepository;
+    PaymentRepository paymentRepository;
+    PaymentMapper paymentMapper;
+    OrderRepository orderRepository;
 
     private static final String ENDPOINT = "https://test-payment.momo.vn/v2/gateway/api/create";
     private static final String PARTNER_CODE = "MOMO";

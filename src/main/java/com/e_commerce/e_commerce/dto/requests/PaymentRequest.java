@@ -3,6 +3,8 @@ package com.e_commerce.e_commerce.dto.requests;
 import com.e_commerce.e_commerce.constant.PaymentMethod;
 import com.e_commerce.e_commerce.constant.PaymentStatus;
 import lombok.*;
+import lombok.experimental.FieldDefaults;
+
 import java.math.BigDecimal;
 import java.time.Instant;
 
@@ -11,12 +13,14 @@ import java.time.Instant;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@FieldDefaults(level = AccessLevel.PRIVATE)
+
 public class PaymentRequest {
-    private String orderId;
-    private BigDecimal amount;
-    private PaymentMethod method;
-    private PaymentStatus status;
-    private String transactionId;
-    private Instant paymentTime;
-    private String provider;
+    String orderId;
+    BigDecimal amount;
+    PaymentMethod method;
+    PaymentStatus status;
+    String transactionId;
+    Instant paymentTime;
+    String provider;
 }
